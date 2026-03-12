@@ -20,6 +20,7 @@ export async function POST(req: NextRequest) {
       { status: 400 },
     );
   }
+  console.log(req);
   const svixId = req.headers.get("svix-id");
   const svixTimestamp = req.headers.get("svix-timestamp");
   const svixSignature = req.headers.get("svix-signature");
@@ -50,6 +51,6 @@ export async function POST(req: NextRequest) {
     });
     return NextResponse.json({ message: "Success" }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: " invalid signature" }, { status: 500 });
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }
