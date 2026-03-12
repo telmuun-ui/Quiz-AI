@@ -1,10 +1,10 @@
 import React from 'react'
-
 import Article from './components/Article'
-export const page = () => {
+
+export default function Page() {
   return (
     <div>
-      <Article></Article>
+      <Article />
     </div>
   )
 }
